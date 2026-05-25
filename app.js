@@ -6,7 +6,7 @@ const policyItems = [
     status: "Normative baseline",
     summary:
       "Rights-based reference for follow-up support on accountability, transparency, inclusion, human oversight, and safeguards for public-interest AI.",
-    tags: ["AI ethics", "human rights", "governance"],
+    tags: ["AI ethics", "governance"],
   },
   {
     date: "2022",
@@ -18,7 +18,7 @@ const policyItems = [
     tags: ["SADC", "science policy", "regional cooperation"],
   },
   {
-    date: "2023-09-05",
+    date: "2023",
     title: "Namibia stakeholder engagement on UNESCO AI ethics implementation",
     dimension: "Governance",
     status: "Readiness process",
@@ -33,10 +33,10 @@ const policyItems = [
     status: "Continental alignment",
     summary:
       "Provides a continental frame for human capital, research ecosystems, data governance, and inclusive AI adoption across African states.",
-    tags: ["AU", "human capital", "innovation"],
+    tags: ["AU", "innovation"],
   },
   {
-    date: "2025-08-14",
+    date: "2025",
     title: "Namibia AI Readiness Assessment Report launched",
     dimension: "Infrastructure",
     status: "Evidence baseline",
@@ -60,7 +60,7 @@ const policyItems = [
     status: "Institution building",
     summary:
       "NCRST, UNAM, NUST, and a proposed institute are relevant anchors for coordination, curriculum design, applied pilots, and ethical review capacity.",
-    tags: ["NCRST", "universities", "AI institute"],
+    tags: ["NCRST", "AI institute"],
   },
   {
     date: "2026",
@@ -69,7 +69,7 @@ const policyItems = [
     status: "Research opportunity",
     summary:
       "RAM follow-up should account for rural communities, Indigenous knowledge, local languages, public trust, and community participation.",
-    tags: ["indigenous knowledge", "inclusion", "local languages"],
+    tags: ["indigenous knowledge"],
   },
 ];
 
