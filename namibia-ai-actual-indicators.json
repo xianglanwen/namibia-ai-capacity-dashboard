@@ -1,104 +1,100 @@
-﻿import json, math, openpyxl, shapefile
-
-regions = ["//Kharas","Erongo","Hardap","Kavango East","Kavango West","Khomas","Kunene","Ohangwena","Omaheke","Omusati","Oshana","Oshikoto","Otjozondjupa","Zambezi"]
-
-def clean_name(name):
-    if name in ("Kharas", "!Karas", "Karas"):
-        return "//Kharas"
-    return name
-
-wb = openpyxl.load_workbook('NSA_2023_Census_Main_Tables.xlsx', data_only=True, read_only=True)
-
-def rows(sheet):
-    return wb[sheet].iter_rows(values_only=True)
-
-internet = {}
-for row in rows('Table 5.2'):
-    name = clean_name(row[0]) if row and row[0] else None
-    if name in regions:
-        internet[name] = float(row[2])
-
-smartphone = {}
-for row in rows('Table 5.1'):
-    name = clean_name(row[0]) if row and row[0] else None
-    if name in regions:
-        smartphone[name] = float(row[5])
-
-youth_lit = {}
-for row in rows('Fig 5.4 Youth Literacy rate'):
-    name = clean_name(row[0]) if row and row[0] else None
-    if name in regions:
-        youth_lit[name] = float(row[9])
-
-population = {}
-youth_share = {}
-for row in rows('Table 2.3'):
-    name = clean_name(row[1]) if len(row) > 1 and row[1] else None
-    if name in regions and isinstance(row[2], (int, float)):
-        population[name] = int(row[2])
-        youth_share[name] = float(row[4]) + float(row[5])
-    name2 = clean_name(row[13]) if len(row) > 13 and row[13] else None
-    if name2 in regions and isinstance(row[19], (int, float)):
-        population[name2] = int(row[19])
-        youth_share[name2] = float(row[21]) + float(row[22])
-
-urban = {}
-for row in rows('Table 4.4'):
-    name = clean_name(row[0]) if row and row[0] else None
-    if name in regions and isinstance(row[8], (int, float)):
-        urban[name] = float(row[8])
-
-reader = shapefile.Reader('regions14/Regions.shp')
-windhoek_lon, windhoek_lat = 17.0832, -22.5597
-
-def centroid(shape):
-    pts = shape.points
-    return sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts)
-
-def haversine(lon1, lat1, lon2, lat2):
-    r = 6371.0
-    phi1, phi2 = math.radians(lat1), math.radians(lat2)
-    dphi = math.radians(lat2 - lat1)
-    dlambda = math.radians(lon2 - lon1)
-    a = math.sin(dphi/2)**2 + math.cos(phi1)*math.cos(phi2)*math.sin(dlambda/2)**2
-    return 2*r*math.atan2(math.sqrt(a), math.sqrt(1-a))
-
-distance_km = {}
-for sr in reader.shapeRecords():
-    name = clean_name(sr.record.as_dict()['NAME_'])
-    cx, cy = centroid(sr.shape)
-    distance_km[name] = haversine(windhoek_lon, windhoek_lat, cx, cy)
-
-missing = {k: [r for r in regions if r not in d] for k,d in [('internet',internet),('smartphone',smartphone),('youth_lit',youth_lit),('population',population),('urban',urban),('distance',distance_km)]}
-print('missing', missing)
-
-max_pop = max(population.values())
-max_dist = max(distance_km.values())
-weights = {'connectivityGapIndex': 0.30, 'skillsGapIndex': 0.25, 'distanceIndex': 0.20, 'servicePressureIndex': 0.15, 'ruralShareIndex': 0.10}
-actual = {}
-for name in regions:
-    raw = {
-        'internetBrowsingPct': internet[name],
-        'smartphoneOwnershipPct': smartphone[name],
-        'youthLiteracyPct': youth_lit[name],
-        'population2023': population[name],
-        'youthSharePct': youth_share[name],
-        'urbanPopulationPct': urban[name],
-        'ruralPopulationPct': 100 - urban[name],
-        'distanceFromWindhoekKm': distance_km[name],
-    }
-    components = {
-        'connectivityGapIndex': 100 - raw['internetBrowsingPct'],
-        'skillsGapIndex': 100 - raw['youthLiteracyPct'],
-        'distanceIndex': 100 * raw['distanceFromWindhoekKm'] / max_dist,
-        'servicePressureIndex': 100 * raw['population2023'] / max_pop,
-        'ruralShareIndex': raw['ruralPopulationPct'],
-    }
-    score = round(sum(components[k] * weights[k] for k in weights))
-    actual[name] = {'raw': raw, 'components': components, 'score': score}
-
-with open('namibia-ai-actual-indicators.json', 'w', encoding='utf-8') as f:
-    json.dump(actual, f, ensure_ascii=False, indent=2)
-
-for name in sorted(actual, key=lambda n: actual[n]['score'], reverse=True):
-    print(name, actual[name]['score'], {k: round(v,1) if isinstance(v,float) else v for k,v in actual[name]['raw'].items()})
+{
+  "//Kharas": {
+    "raw": {
+      "internetBrowsingPct": 37.597670756706975,
+      "smartphoneOwnershipPct": 37.87397130039514,
+      "youthLiteracyPct": 97.24411437809437,
+      "population2023": 109893,
+      "youthSharePct": 55.2,
+      "urbanPopulationPct": 62.52172567861465,
+      "ruralPopulationPct": 37.47827432138535,
+      "distanceFromWindhoekKm": 536.2977954858854
+    },
+    "components": {
+      "connectivityGapIndex": 62.402329243293025,
+      "skillsGapIndex": 2.755885621905634,
+      "distanceIndex": 60.34084292171888,
+      "servicePressureIndex": 22.218335843754108,
+      "ruralShareIndex": 37.47827432138535
+    },
+    "score": 39
+  },
+  "Erongo": {
+    "raw": {
+      "internetBrowsingPct": 47.8353110065236,
+      "smartphoneOwnershipPct": 46.810434118951136,
+      "youthLiteracyPct": 96.58008607788773,
+      "population2023": 240206,
+      "youthSharePct": 55.0,
+      "urbanPopulationPct": 90.01357168430431,
+      "ruralPopulationPct": 9.98642831569569,
+      "distanceFromWindhoekKm": 226.47840285563097
+    },
+    "components": {
+      "connectivityGapIndex": 52.1646889934764,
+      "skillsGapIndex": 3.419913922112272,
+      "distanceIndex": 25.48192039367252,
+      "servicePressureIndex": 48.5652187098796,
+      "ruralShareIndex": 9.98642831569569
+    },
+    "score": 30
+  },
+  "Hardap": {
+    "raw": {
+      "internetBrowsingPct": 29.799736549623347,
+      "smartphoneOwnershipPct": 29.376775202733295,
+      "youthLiteracyPct": 94.29923191495575,
+      "population2023": 106680,
+      "youthSharePct": 54.3,
+      "urbanPopulationPct": 74.25665541807274,
+      "ruralPopulationPct": 25.74334458192726,
+      "distanceFromWindhoekKm": 182.733285161036
+    },
+    "components": {
+      "connectivityGapIndex": 70.20026345037665,
+      "skillsGapIndex": 5.7007680850442455,
+      "distanceIndex": 20.559995862899147,
+      "servicePressureIndex": 21.568726559577843,
+      "ruralShareIndex": 25.74334458192726
+    },
+    "score": 32
+  },
+  "Kavango East": {
+    "raw": {
+      "internetBrowsingPct": 19.374273765465276,
+      "smartphoneOwnershipPct": 19.18846010125053,
+      "youthLiteracyPct": 92.33380166094008,
+      "population2023": 218421,
+      "youthSharePct": 60.599999999999994,
+      "urbanPopulationPct": 56.96292938865768,
+      "ruralPopulationPct": 43.03707061134232,
+      "distanceFromWindhoekKm": 605.9575503636011
+    },
+    "components": {
+      "connectivityGapIndex": 80.62572623453472,
+      "skillsGapIndex": 7.6661983390599175,
+      "distanceIndex": 68.17851885927045,
+      "servicePressureIndex": 44.16069388704118,
+      "ruralShareIndex": 43.03707061134232
+    },
+    "score": 51
+  },
+  "Kavango West": {
+    "raw": {
+      "internetBrowsingPct": 10.07671611401978,
+      "smartphoneOwnershipPct": 11.331079115764979,
+      "youthLiteracyPct": 90.20178245576918,
+      "population2023": 123266,
+      "youthSharePct": 59.7,
+      "urbanPopulationPct": 8.488147583275193,
+      "ruralPopulationPct": 91.5118524167248,
+      "distanceFromWindhoekKm": 537.9422332535934
+    },
+    "components": {
+      "connectivityGapIndex": 89.92328388598023,
+      "skillsGapIndex": 9.798217544230823,
+      "distanceIndex": 60.52586467991184,
+      "servicePressureIndex": 24.922109562175876,
+      "ruralShareIndex": 91.5118524167248
+    },
+    "score": 54
