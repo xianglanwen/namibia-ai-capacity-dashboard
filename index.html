@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Namibia AI Capacity Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">UNESCO-aligned working policy dashboard</p>
+          <h1>Namibia AI Capacity-Building Tracker</h1>
+          <p class="hero-copy">
+            A working dashboard for tracking Namibia's responsible AI policy activity and mapping regional
+            capacity-building priorities from public data signals. Built for policy briefings, planning workshops,
+            and annex figures.
+          </p>
+        </div>
+        <aside class="hero-stats" aria-label="headline indicators">
+          <div>
+            <strong>2025</strong>
+            <span>AI readiness report launched with UNESCO support</span>
+          </div>
+          <div>
+            <strong>14</strong>
+            <span>regions scored for training priority</span>
+          </div>
+          <div>
+            <strong>5</strong>
+            <span>capacity dimensions in the tracker</span>
+          </div>
+        </aside>
+      </header>
+
+      <section class="toolbar" aria-label="tracker controls">
+        <label class="search-box">
+          <span>Search tracker</span>
+          <input id="searchInput" type="search" placeholder="Try policy, judiciary, data, education..." />
+        </label>
+        <label class="select-box">
+          <span>Filter dimension</span>
+          <select id="dimensionFilter">
+            <option value="all">All dimensions</option>
+            <option value="Governance">Governance</option>
+            <option value="Infrastructure">Infrastructure</option>
+            <option value="Education">Education</option>
+            <option value="Research">Research</option>
+            <option value="Inclusion">Inclusion</option>
+          </select>
+        </label>
+        <button id="copyBriefButton" class="button" type="button">Copy briefing note</button>
+      </section>
+
+      <section class="panel audience-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Who needs capacity?</p>
+            <h2>Five target groups for Namibia's AI capacity-building agenda</h2>
+          </div>
+          <span class="pill">Use as report framing</span>
+        </div>
+        <div id="audienceGrid" class="audience-grid" aria-label="AI capacity-building target groups"></div>
+        <div id="audienceDetail" class="audience-detail"></div>
+      </section>
+
+      <section class="grid two-column">
+        <article class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Policy tracker</p>
+              <h2>AI readiness and policy activity</h2>
+            </div>
+            <span id="trackerCount" class="pill">0 items</span>
+          </div>
+          <div id="policyList" class="policy-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Capacity gap map</p>
+              <h2>Regional training priority</h2>
+            </div>
+            <span class="pill">Draft index</span>
+          </div>
+          <p class="map-note">
+            Regional map using Namibia EIS boundaries and 2023 Census indicators. Scores are derived from actual
+            public indicators, then normalised into a planning priority index.
+          </p>
+          <div class="map-layout">
+            <div id="regionMap" class="region-map" aria-label="schematic regional map"></div>
+            <div id="regionDetail" class="region-detail"></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid three-column">
+        <article class="panel metric-panel">
+          <p class="eyebrow">Highest priority</p>
+          <h3 id="highestPriority">-</h3>
+          <p id="highestPriorityText"></p>
+        </article>
+        <article class="panel metric-panel">
+          <p class="eyebrow">Most active policy lane</p>
+          <h3>Governance</h3>
+          <p>UNESCO RAM, AI ethics implementation, lawmaker training, and proposed institutional coordination.</p>
+        </article>
+        <article class="panel metric-panel">
+          <p class="eyebrow">Research angle</p>
+          <h3>Capacity before adoption</h3>
+          <p>Frame the report around what Namibia must build before AI systems are scaled across public services.</p>
+        </article>
+      </section>
+
+      <section class="panel methods">
+        <div>
+          <p class="eyebrow">Method note</p>
+          <h2>How the draft priority score is calculated</h2>
+        </div>
+        <div class="formula-block">
+          <p class="formula">
+            Score = 0.30C + 0.25S + 0.20D + 0.15P + 0.10I
+          </p>
+          <p>
+            C = 100 minus the 2023 Census internet-browsing rate. S = 100 minus the 2023 Census youth literacy rate.
+            D = regional centroid distance from Windhoek, normalised to 0-100. P = 2023 Census regional population,
+            normalised to 0-100. I = 2023 Census rural population share. High priority is 55 and above, medium priority
+            is 40-54, and low priority is below 40.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel sources">
+        <div>
+          <p class="eyebrow">Source spine</p>
+          <h2>Public references to cite</h2>
+        </div>
+        <ul>
+          <li>
+            <a href="https://www.unesco.org/en/articles/namibia-launches-artificial-intelligence-readiness-assessment-report">UNESCO, Namibia AI Readiness Assessment launch</a>,
+            14 August 2025.
+          </li>
+          <li>
+            <a href="https://www.unesco.org/en/articles/namibia-sets-roadmap-develop-ai-responsibly-and-ethically">UNESCO, Namibia roadmap workshop for the Recommendation on the Ethics of AI</a>,
+            5 September 2023.
+          </li>
+          <li>
+            <a href="https://www.unesco.org/ethics-ai/en/namibia">UNESCO Global AI Ethics and Governance Observatory, Namibia country page</a>.
+          </li>
+          <li>
+            <a href="https://nsa.org.na/">Namibia Statistics Agency</a>, 2023 Population and Housing Census Main Report.
+          </li>
+          <li>
+            <a href="https://nsa.org.na/document/2023-population-and-housing-census-main-report-excel-table/">Namibia Statistics Agency</a>,
+            2023 Population and Housing Census Main report Excel Table.
+          </li>
+          <li>
+            <a href="https://the-eis.com/elibrary/search/13384">Environmental Information Service Namibia</a>,
+            Regions of Namibia boundary file, 2013.
+          </li>
+          <li>African Union, Continental Artificial Intelligence Strategy, 2024.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
