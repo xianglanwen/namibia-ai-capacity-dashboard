@@ -6,7 +6,7 @@ const policyItems = [
     status: "Normative baseline",
     summary:
       "Rights-based reference for follow-up support on accountability, transparency, inclusion, human oversight, and safeguards for public-interest AI.",
-    tags: ["AI ethics", "human rights", "governance"],
+    tags: ["AI ethics", "governance"],
   },
   {
     date: "2022",
@@ -24,7 +24,7 @@ const policyItems = [
     status: "Readiness process",
     summary:
       "Multi-stakeholder consultation in Windhoek supporting implementation of UNESCO's Readiness Assessment Methodology.",
-    tags: ["RAM", "multi-stakeholder", "Windhoek"],
+    tags: ["multi-stakeholder", "Windhoek"],
   },
   {
     date: "2024",
@@ -42,7 +42,7 @@ const policyItems = [
     status: "Evidence baseline",
     summary:
       "UNESCO-supported assessment identifies progress and remaining needs across governance, infrastructure, skills, education, and public awareness.",
-    tags: ["NCRST", "UNESCO", "AI readiness"],
+    tags: ["UNESCO", "AI readiness"],
   },
   {
     date: "2025",
@@ -60,7 +60,7 @@ const policyItems = [
     status: "Institution building",
     summary:
       "NCRST, UNAM, NUST, and a proposed institute are relevant anchors for coordination, curriculum design, applied pilots, and ethical review capacity.",
-    tags: ["NCRST", "universities", "AI institute"],
+    tags: ["NCRST", "universities"],
   },
   {
     date: "2026",
@@ -69,7 +69,7 @@ const policyItems = [
     status: "Research opportunity",
     summary:
       "RAM follow-up should account for rural communities, Indigenous knowledge, local languages, public trust, and community participation.",
-    tags: ["indigenous knowledge", "inclusion", "local languages"],
+    tags: ["indigenous knowledge"],
   },
 ];
 
