@@ -1,0 +1,296 @@
+{
+  "//Kharas": {
+    "raw": {
+      "internetBrowsingPct": 37.597670756706975,
+      "smartphoneOwnershipPct": 37.87397130039514,
+      "digitalAccessPct": 37.708190974182244,
+      "adultLiteracyPct": 95.6,
+      "population2023": 109893,
+      "youthSharePct": 55.2,
+      "urbanPopulationPct": 62.52172567861465,
+      "ruralPopulationPct": 37.47827432138535,
+      "distanceFromWindhoekKm": 536.2977954858854
+    },
+    "components": {
+      "digitalAccessGapIndex": 62.291809025817756,
+      "adultLiteracyGapIndex": 4.400000000000006,
+      "distanceIndex": 60.34084292171888,
+      "servicePressureIndex": 22.218335843754108,
+      "ruralShareIndex": 37.47827432138535
+    },
+    "score": 43
+  },
+  "Erongo": {
+    "raw": {
+      "internetBrowsingPct": 47.8353110065236,
+      "smartphoneOwnershipPct": 46.810434118951136,
+      "digitalAccessPct": 47.42536025149461,
+      "adultLiteracyPct": 95.4,
+      "population2023": 240206,
+      "youthSharePct": 55.0,
+      "urbanPopulationPct": 90.01357168430431,
+      "ruralPopulationPct": 9.98642831569569,
+      "distanceFromWindhoekKm": 226.47840285563097
+    },
+    "components": {
+      "digitalAccessGapIndex": 52.57463974850539,
+      "adultLiteracyGapIndex": 4.599999999999994,
+      "distanceIndex": 25.48192039367252,
+      "servicePressureIndex": 48.5652187098796,
+      "ruralShareIndex": 9.98642831569569
+    },
+    "score": 31
+  },
+  "Hardap": {
+    "raw": {
+      "internetBrowsingPct": 29.799736549623347,
+      "smartphoneOwnershipPct": 29.376775202733295,
+      "digitalAccessPct": 29.630552010867326,
+      "adultLiteracyPct": 90.5,
+      "population2023": 106680,
+      "youthSharePct": 54.3,
+      "urbanPopulationPct": 74.25665541807274,
+      "ruralPopulationPct": 25.74334458192726,
+      "distanceFromWindhoekKm": 182.733285161036
+    },
+    "components": {
+      "digitalAccessGapIndex": 70.36944798913268,
+      "adultLiteracyGapIndex": 9.5,
+      "distanceIndex": 20.559995862899147,
+      "servicePressureIndex": 21.568726559577843,
+      "ruralShareIndex": 25.74334458192726
+    },
+    "score": 37
+  },
+  "Kavango East": {
+    "raw": {
+      "internetBrowsingPct": 19.374273765465276,
+      "smartphoneOwnershipPct": 19.18846010125053,
+      "digitalAccessPct": 19.299948299779377,
+      "adultLiteracyPct": 82.0,
+      "population2023": 218421,
+      "youthSharePct": 60.599999999999994,
+      "urbanPopulationPct": 56.96292938865768,
+      "ruralPopulationPct": 43.03707061134232,
+      "distanceFromWindhoekKm": 605.9575503636011
+    },
+    "components": {
+      "digitalAccessGapIndex": 80.70005170022063,
+      "adultLiteracyGapIndex": 18.0,
+      "distanceIndex": 68.17851885927045,
+      "servicePressureIndex": 44.16069388704118,
+      "ruralShareIndex": 43.03707061134232
+    },
+    "score": 56
+  },
+  "Kavango West": {
+    "raw": {
+      "internetBrowsingPct": 10.07671611401978,
+      "smartphoneOwnershipPct": 11.331079115764979,
+      "digitalAccessPct": 10.57846131471786,
+      "adultLiteracyPct": 77.9,
+      "population2023": 123266,
+      "youthSharePct": 59.7,
+      "urbanPopulationPct": 8.488147583275193,
+      "ruralPopulationPct": 91.5118524167248,
+      "distanceFromWindhoekKm": 537.9422332535934
+    },
+    "components": {
+      "digitalAccessGapIndex": 89.42153868528214,
+      "adultLiteracyGapIndex": 22.099999999999994,
+      "distanceIndex": 60.52586467991184,
+      "servicePressureIndex": 24.922109562175876,
+      "ruralShareIndex": 91.5118524167248
+    },
+    "score": 64
+  },
+  "Khomas": {
+    "raw": {
+      "internetBrowsingPct": 52.305954628076066,
+      "smartphoneOwnershipPct": 49.68715044742729,
+      "digitalAccessPct": 51.25843295581656,
+      "adultLiteracyPct": 95.8,
+      "population2023": 494605,
+      "youthSharePct": 58.0,
+      "urbanPopulationPct": 98.29783362481172,
+      "ruralPopulationPct": 1.702166375188284,
+      "distanceFromWindhoekKm": 24.710255748207377
+    },
+    "components": {
+      "digitalAccessGapIndex": 48.74156704418344,
+      "adultLiteracyGapIndex": 4.200000000000003,
+      "distanceIndex": 2.780242009585744,
+      "servicePressureIndex": 100.0,
+      "ruralShareIndex": 1.702166375188284
+    },
+    "score": 29
+  },
+  "Kunene": {
+    "raw": {
+      "internetBrowsingPct": 14.22327984518375,
+      "smartphoneOwnershipPct": 16.130704913934387,
+      "digitalAccessPct": 14.986249872684006,
+      "adultLiteracyPct": 63.9,
+      "population2023": 120762,
+      "youthSharePct": 57.2,
+      "urbanPopulationPct": 33.68609330749739,
+      "ruralPopulationPct": 66.31390669250261,
+      "distanceFromWindhoekKm": 547.7815154075284
+    },
+    "components": {
+      "digitalAccessGapIndex": 85.013750127316,
+      "adultLiteracyGapIndex": 36.1,
+      "distanceIndex": 61.632918603889216,
+      "servicePressureIndex": 24.415846989011435,
+      "ruralShareIndex": 66.31390669250261
+    },
+    "score": 62
+  },
+  "Ohangwena": {
+    "raw": {
+      "internetBrowsingPct": 13.976172869936734,
+      "smartphoneOwnershipPct": 15.182975926382383,
+      "digitalAccessPct": 14.458894092514994,
+      "adultLiteracyPct": 84.6,
+      "population2023": 337729,
+      "youthSharePct": 59.0,
+      "urbanPopulationPct": 14.588915965167338,
+      "ruralPopulationPct": 85.41108403483267,
+      "distanceFromWindhoekKm": 565.1342395253953
+    },
+    "components": {
+      "digitalAccessGapIndex": 85.541105907485,
+      "adultLiteracyGapIndex": 15.400000000000006,
+      "distanceIndex": 63.58533759399802,
+      "servicePressureIndex": 68.28256891863204,
+      "ruralShareIndex": 85.41108403483267
+    },
+    "score": 65
+  },
+  "Omaheke": {
+    "raw": {
+      "internetBrowsingPct": 20.05091539378182,
+      "smartphoneOwnershipPct": 22.410356407756474,
+      "digitalAccessPct": 20.99469179937168,
+      "adultLiteracyPct": 76.0,
+      "population2023": 102881,
+      "youthSharePct": 55.400000000000006,
+      "urbanPopulationPct": 43.76512669977936,
+      "ruralPopulationPct": 56.23487330022064,
+      "distanceFromWindhoekKm": 288.4330985867626
+    },
+    "components": {
+      "digitalAccessGapIndex": 79.00530820062832,
+      "adultLiteracyGapIndex": 24.0,
+      "distanceIndex": 32.45267170915781,
+      "servicePressureIndex": 20.80063889366262,
+      "ruralShareIndex": 56.23487330022064
+    },
+    "score": 49
+  },
+  "Omusati": {
+    "raw": {
+      "internetBrowsingPct": 15.320373920048894,
+      "smartphoneOwnershipPct": 17.410478650998694,
+      "digitalAccessPct": 16.156415812428815,
+      "adultLiteracyPct": 84.1,
+      "population2023": 316671,
+      "youthSharePct": 56.5,
+      "urbanPopulationPct": 11.11026901737134,
+      "ruralPopulationPct": 88.88973098262866,
+      "distanceFromWindhoekKm": 574.6206841144358
+    },
+    "components": {
+      "digitalAccessGapIndex": 83.84358418757118,
+      "adultLiteracyGapIndex": 15.900000000000006,
+      "distanceIndex": 64.65269246222803,
+      "servicePressureIndex": 64.0250300745039,
+      "ruralShareIndex": 88.88973098262866
+    },
+    "score": 65
+  },
+  "Oshana": {
+    "raw": {
+      "internetBrowsingPct": 32.60665306316139,
+      "smartphoneOwnershipPct": 32.43581834575049,
+      "digitalAccessPct": 32.53831917619703,
+      "adultLiteracyPct": 92.0,
+      "population2023": 230801,
+      "youthSharePct": 57.6,
+      "urbanPopulationPct": 53.204708818419334,
+      "ruralPopulationPct": 46.795291181580666,
+      "distanceFromWindhoekKm": 462.85336767821906
+    },
+    "components": {
+      "digitalAccessGapIndex": 67.46168082380296,
+      "adultLiteracyGapIndex": 8.0,
+      "distanceIndex": 52.077339474342594,
+      "servicePressureIndex": 46.66370133743088,
+      "ruralShareIndex": 46.795291181580666
+    },
+    "score": 47
+  },
+  "Oshikoto": {
+    "raw": {
+      "internetBrowsingPct": 18.115817065599778,
+      "smartphoneOwnershipPct": 20.18089949644754,
+      "digitalAccessPct": 18.941850037938885,
+      "adultLiteracyPct": 85.2,
+      "population2023": 257302,
+      "youthSharePct": 56.7,
+      "urbanPopulationPct": 18.367521433956984,
+      "ruralPopulationPct": 81.63247856604302,
+      "distanceFromWindhoekKm": 439.6922131351222
+    },
+    "components": {
+      "digitalAccessGapIndex": 81.05814996206112,
+      "adultLiteracyGapIndex": 14.799999999999997,
+      "distanceIndex": 49.47139255467556,
+      "servicePressureIndex": 52.021714297267515,
+      "ruralShareIndex": 81.63247856604302
+    },
+    "score": 59
+  },
+  "Otjozondjupa": {
+    "raw": {
+      "internetBrowsingPct": 29.47327323419144,
+      "smartphoneOwnershipPct": 29.457255694986014,
+      "digitalAccessPct": 29.466866218509267,
+      "adultLiteracyPct": 83.0,
+      "population2023": 220811,
+      "youthSharePct": 56.9,
+      "urbanPopulationPct": 62.91443813940428,
+      "ruralPopulationPct": 37.08556186059572,
+      "distanceFromWindhoekKm": 226.93803394700703
+    },
+    "components": {
+      "digitalAccessGapIndex": 70.53313378149073,
+      "adultLiteracyGapIndex": 17.0,
+      "distanceIndex": 25.533635182955834,
+      "servicePressureIndex": 44.643907764782,
+      "ruralShareIndex": 37.08556186059572
+    },
+    "score": 43
+  },
+  "Zambezi": {
+    "raw": {
+      "internetBrowsingPct": 20.652841902900995,
+      "smartphoneOwnershipPct": 21.00896613668237,
+      "digitalAccessPct": 20.795291596413545,
+      "adultLiteracyPct": 83.3,
+      "population2023": 142373,
+      "youthSharePct": 57.8,
+      "urbanPopulationPct": 33.950257422404526,
+      "ruralPopulationPct": 66.04974257759548,
+      "distanceFromWindhoekKm": 888.7807486906223
+    },
+    "components": {
+      "digitalAccessGapIndex": 79.20470840358645,
+      "adultLiteracyGapIndex": 16.700000000000003,
+      "distanceIndex": 100.0,
+      "servicePressureIndex": 28.78519222409802,
+      "ruralShareIndex": 66.04974257759548
+    },
+    "score": 64
+  }
+}
